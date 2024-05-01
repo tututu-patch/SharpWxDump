@@ -1,0 +1,25 @@
+name: .NET
+
+on: push
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 5
+
+    - name: Build
+      run: dotnet build -p:Configuration=Release -p:Platform=x64 -p:DebugSymbols=false -p:DebugType=None
+      
+    - uses: actions/upload-artifact@v3
+      with:
+        name: SharpWxDump.exe
+        path: ./bin/x64/Release/SharpWxDump.exe
