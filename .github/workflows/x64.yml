@@ -22,4 +22,4 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: SharpWxDump.exe
-        path: ./bin/x64/Release/SharpWxDump.exe
+        path: ./bin/Release/SharpWxDump.exe
