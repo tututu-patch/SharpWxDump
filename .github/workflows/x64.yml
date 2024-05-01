@@ -17,7 +17,7 @@ jobs:
         dotnet-version: 5
 
     - name: Build
-      run: dotnet build -p:Configuration=Release -p:Platform=x64 -p:DebugSymbols=false -p:DebugType=None
+      run: dotnet build -p:Configuration=Release -p:Platform="Any CPU" -p:DebugSymbols=false -p:DebugType=None
       
     - uses: actions/upload-artifact@v3
       with:
